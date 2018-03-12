@@ -15,15 +15,18 @@ public abstract class Command {
     protected AddressBook addressBook;
     protected List<? extends ReadOnlyPerson> relevantPersons;
     private int targetIndex = -1;
+    private final boolean mutating;
 
     /**
      * @param targetIndex last visible listing index of the target person
      */
-    public Command(int targetIndex) {
+    public Command(int targetIndex, boolean mutating) {
         this.setTargetIndex(targetIndex);
+        this.mutating = mutating;
     }
 
-    protected Command() {
+    protected Command(boolean mutating) {
+        this.mutating = mutating;
     }
 
     /**
@@ -76,6 +79,6 @@ public abstract class Command {
      * @return whether a command is mutating the data in the addressbook
      */
     public boolean isMutating() {
-        return false;
+        return mutating;
     }
 }
