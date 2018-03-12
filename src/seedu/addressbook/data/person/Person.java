@@ -87,7 +87,7 @@ public class Person implements ReadOnlyPerson {
     /**
      * Returns a concatenated version of the printable strings of each object.
      */
-    public String getPrintableString(Printable... printables){
+    public String getPrintableString(Printable... printables) {
         StringBuilder sb = new StringBuilder();
         for (Printable printable : printables) {
             sb.append(printable);
