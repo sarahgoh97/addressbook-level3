@@ -89,6 +89,8 @@ public class Logic {
         CommandResult result = command.execute();
         if (command.isMutating()) {
             storage.save(addressBook);
+        } else {
+            addressBook = storage.load();
         }
         return result;
     }
