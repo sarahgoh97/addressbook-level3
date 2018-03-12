@@ -21,7 +21,7 @@ public class DeleteCommand extends Command {
 
 
     public DeleteCommand(int targetVisibleIndex) {
-        super(targetVisibleIndex);
+        super(targetVisibleIndex, true);
     }
 
 
@@ -39,8 +39,4 @@ public class DeleteCommand extends Command {
         }
     }
 
-    @Override
-    public boolean isMutating() {
-        return true;
-    }
 }

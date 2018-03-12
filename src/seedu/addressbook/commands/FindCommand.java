@@ -20,6 +20,7 @@ public class FindCommand extends Command {
     private final Set<String> keywords;
 
     public FindCommand(Set<String> keywords) {
+        super(false);
         this.keywords = keywords;
     }
 
@@ -34,11 +35,6 @@ public class FindCommand extends Command {
     public CommandResult execute() {
         final List<ReadOnlyPerson> personsFound = getPersonsWithNameContainingAnyKeyword(keywords);
         return new CommandResult(getMessageForPersonListShownSummary(personsFound), personsFound);
-    }
-
-    @Override
-    public boolean isMutating() {
-        return false;
     }
 
     /**

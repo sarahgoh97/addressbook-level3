@@ -9,6 +9,7 @@ public class IncorrectCommand extends Command{
     public final String feedbackToUser;
 
     public IncorrectCommand(String feedbackToUser){
+        super(false);
         this.feedbackToUser = feedbackToUser;
     }
 
@@ -17,8 +18,4 @@ public class IncorrectCommand extends Command{
         return new CommandResult(feedbackToUser);
     }
 
-    @Override
-    public boolean isMutating() {
-        return false;
-    }
 }

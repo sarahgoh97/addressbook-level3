@@ -21,7 +21,7 @@ public class ViewCommand extends Command {
 
 
     public ViewCommand(int targetVisibleIndex) {
-        super(targetVisibleIndex);
+        super(targetVisibleIndex, false);
     }
 
 
@@ -36,11 +36,6 @@ public class ViewCommand extends Command {
         } catch (IndexOutOfBoundsException ie) {
             return new CommandResult(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
-    }
-
-    @Override
-    public boolean isMutating() {
-        return false;
     }
 
 }
